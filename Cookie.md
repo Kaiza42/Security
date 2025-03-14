@@ -28,9 +28,17 @@ Ou peut etre envoyer a d'autre site (Cross-Site)
 
 #### Same-Site = strict 
 1. En mode Strict, le cookie n’est envoyé que pour les requêtes provenant du même site (Same-Site). Cela signifie que même lorsqu'un utilisateur suit un lien depuis un autre site, le cookie ne sera pas envoyé.
+
 2. Ce mode offre le niveau de sécurité le plus élevé, car il empêche totalement toute interaction entre les cookies et des requêtes provenant d’autres sites.
+
 3. Cas d’usage : Idéal pour les cookies sensibles, comme ceux de session utilisateur ou d'authentification, où vous ne voulez absolument pas que les cookies soient exposés à des requêtes provenant d’autres sites.
 
+#### Same-Site = None 
 
+1. En mode None, le cookie peut être envoyé lors de requêtes cross-site. Cela signifie que le cookie sera envoyé dans tous les contextes, y compris les requêtes provenant d'autres sites.
+
+2. Important : Si vous définissez SameSite=None, il est obligatoire que le cookie soit marqué comme Secure (ce qui signifie qu'il ne sera envoyé que via des connexions HTTPS).
+
+3. Cas d’usage : Ce mode est nécessaire lorsque vous devez partager des cookies entre différents sites, comme dans le cas d’un site principal et d’un sous-domaine tiers, ou dans des applications de tiers intégrées (widgets, services de paiement, etc.).
 
 
