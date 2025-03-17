@@ -19,18 +19,23 @@ Lorsque des formulaires ne sont pas correctement sécurisés, des attaquants peu
 3.2. Solutions mises en place pour sécuriser le Front-End
 Protection contre les attaques XSS (Cross-Site Scripting)
 
-Validation et assainissement des entrées : Toutes les données provenant des utilisateurs sont systématiquement validées et nettoyées afin d'éviter l'injection de code malveillant. Par exemple, les champs de saisie doivent être nettoyés pour éliminer tout code HTML ou JavaScript.
-Utilisation de Content Security Policy (CSP) : Cette politique permet de définir les sources autorisées pour les scripts, ce qui réduit considérablement le risque d'exécution de code non fiable.
-Échappement des données : Lors de l'affichage des données saisies par les utilisateurs, des techniques d'échappement sont appliquées pour empêcher l'exécution de code JavaScript.
+Validation et assainissement des entrées : Toutes les données provenant des utilisateurs sont systématiquement validées et nettoyées avant d’être traitées ou affichées sur la page. Cela inclut les champs de formulaire, les URL et les autres points d'entrée de données utilisateur.
+Échappement des données : Lors de l’affichage de données sur le front-end, des méthodes d’échappement sont utilisées pour transformer les caractères spéciaux en entités HTML sûres. Cela empêche le code malveillant d’être interprété comme du script.
+Utilisation de Content Security Policy (CSP) : L'implémentation d'une politique CSP limite les sources de contenu autorisées (scripts, images, etc.), empêchant l'exécution de scripts malveillants provenant de sources non fiables.
+Protection contre le Reflected XSS (XSS temporaire)
+
+Validation et filtrage des paramètres d'URL : Tous les paramètres d'URL, ainsi que les données envoyées dans les formulaires, sont validés pour s'assurer qu'ils ne contiennent pas de scripts malveillants.
+Filtrage et évasion des données : Les données reçues par le serveur doivent être correctement échappées avant d'être renvoyées dans la réponse HTTP afin d'éviter qu’elles soient interprétées comme des scripts.
 Protection contre les attaques CSRF (Cross-Site Request Forgery)
 
-Tokens CSRF : À chaque action sensible effectuée sur la plateforme, un token unique est inclus dans la requête afin de vérifier que l'action provient bien de l'utilisateur légitime et non d'un site malveillant.
-Vérification des méthodes HTTP : Les requêtes sensibles sont limitées à certaines méthodes HTTP (comme POST), empêchant ainsi l'envoi de requêtes via des liens.
+Tokens CSRF : À chaque action sensible sur le site (comme la modification du profil ou l'envoi de données), un token unique est envoyé dans la requête HTTP pour s'assurer que la demande provient bien de l'utilisateur légitime et non d'un site malveillant.
+Vérification des méthodes HTTP : Les actions sensibles sont limitées aux méthodes HTTP appropriées (par exemple, POST plutôt que GET), afin d'éviter l'exploitation des requêtes GET pour des actions non sécurisées.
 Sécurisation des sessions et cookies
 
-Cookies sécurisés et HttpOnly : Les cookies de session sont marqués comme "secure" et "HttpOnly" pour les protéger contre les attaques de type XSS. Cela empêche un script malveillant d'accéder au contenu du cookie.
-Expiration des sessions : Des mécanismes de gestion de la durée des sessions sont mis en place pour réduire les risques liés au vol de session. Les sessions sont expirées après un certain délai d'inactivité.
+Cookies sécurisés (Secure Cookies) : Les cookies utilisés pour stocker les informations de session sont marqués comme Secure et ne sont envoyés que via des connexions HTTPS.
+Cookies HttpOnly : Les cookies de session sont également marqués comme HttpOnly, ce qui empêche l'accès aux cookies via JavaScript et les protège contre les attaques XSS.
+Expiration des sessions : Des mécanismes de gestion de la durée des sessions sont mis en place pour expirer les sessions inactives après un certain délai, réduisant ainsi les risques de vol de session.
 Sécurisation des formulaires et champs de saisie
 
-Validation côté serveur : En plus de la validation côté client, une validation supplémentaire est effectuée côté serveur pour garantir qu'aucune donnée malveillante n'est traitée.
-Utilisation de bibliothèques sécurisées : Les bibliothèques utilisées pour le rendu des formulaires ou des champs de saisie sont choisies en fonction de leur niveau de sécurité et de leur résistance aux attaques d'injection.
+Validation côté serveur et côté client : Toutes les données soumises via des formulaires sont validées à la fois côté client (pour l'expérience utilisateur) et côté serveur (pour la sécurité).
+Filtrage des caractères spéciaux : Toute donnée saisie dans un formulaire est filtrée pour éliminer les caractères spéciaux qui pourraient être interprétés comme du code malveillant.
