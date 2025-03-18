@@ -42,3 +42,6 @@ Ou peut etre envoyer a d'autre site (Cross-Site)
 3. Cas d’usage : Ce mode est nécessaire lorsque vous devez partager des cookies entre différents sites, comme dans le cas d’un site principal et d’un sous-domaine tiers, ou dans des applications de tiers intégrées (widgets, services de paiement, etc.).
 
 
+[Utiliser les cookies HTTP par MDN](https://developer.mozilla.org/fr/docs/Web/HTTP/Guides/Cookies)
+
+
