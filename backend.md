@@ -18,13 +18,13 @@ L'attaque par injection SQL survient lorsqu'un attaquant parvient à insérer du
 
 [doc wikipedia a porpos de l'injection SQL](https://fr.wikipedia.org/wiki/Injection_SQL)
 
-### 2. **Weak Authentication** => logique 
+### 2. **Weak Authentication** <!-- => logique  -->
 
  Une authentification faible se produit lorsque des mécanismes de validation des utilisateurs sont insuffisants, tels que des mots de passe simples ou des méthodes d'authentification obsolètes. Cela permet aux attaquants de contourner facilement les mesures de sécurité et d'accéder aux ressources protégées.
 
  [anssi](https://cyber.gouv.fr/sites/default/files/2021/10/anssi-guide-authentification_multifacteur_et_mots_de_passe.pdf)
 
-### 3. **Insufficient Access Control** => logique 
+ ### 3. **Insufficient Access Control** <!--=> logique  -->
 
  Si les contrôles d'accès ne sont pas correctement implémentés, les utilisateurs peuvent accéder à des données ou des fonctionnalités qu'ils ne devraient pas pouvoir utiliser. Cela peut être dû à une mauvaise gestion des rôles et des permissions.
 
