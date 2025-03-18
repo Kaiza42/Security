@@ -51,6 +51,7 @@ Ce code permet à Page B de manipuler Page A en accédant directement à son DOM
 </body>
 </html>
 ```
+
 ### Mécanisme d'attaque
 Page A contient un lien vers Page B avec l'attribut target="_blank", ce qui ouvre Page B dans un nouvel onglet.
 Page B, par l'intermédiaire de l'objet window.opener, accède à la page parente (Page A) et modifie son contenu.
@@ -97,6 +98,8 @@ L'attribut rel="noopener" empêche l'objet window.opener d'être défini, ce qui
 
 
 3. Contrôle renforcé sur l'interface utilisateur : Empêche toute modification indésirable de l'interface de votre site par des pages externes.
+
 ### Conclusion
+
 L'ajout de rel="noopener" est une mesure de sécurité indispensable pour protéger vos utilisateurs contre les attaques liées à window.opener. En utilisant cette approche, vous vous assurez qu'aucune page externe ne puisse interagir de manière malveillante avec votre site lorsqu'elle est ouverte dans un nouvel onglet ou une nouvelle fenêtre.
 
