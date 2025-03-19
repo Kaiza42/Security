@@ -27,7 +27,13 @@ Les informations sensibles, telles que les mots de passe, doivent être chiffré
 
  Le hachage des mots de passe, accompagné d'un salage unique pour chaque utilisateur, est une méthode essentielle pour sécuriser les informations de connexion. Ce processus rend impossible la récupération du mot de passe original, même si les informations de la base de données sont compromises. 
 
-### Contrôle d'accès : WOW
+[lien pour le hashage](https://developer.mozilla.org/fr/docs/Glossary/Cryptographic_hash_function)
+
+[lien pour le salage](https://developer.mozilla.org/fr/docs/Web/API/Web_Crypto_API/Non-cryptographic_uses_of_subtle_crypto)
+
+[lien ANSSI qui en fait référence](https://cyber.gouv.fr/publications/recommandations-pour-la-protection-des-systemes-dinformation-essentiels)
+
+ ### Contrôle d'accès : <!-- WOW --> 
 
 Les privilèges d'accès à la base de données doivent être strictement contrôlés. Chaque compte utilisateur doit avoir un niveau d'accès minimal correspondant à ses besoins spécifiques, et l'accès aux informations sensibles doit être limité au personnel autorisé uniquement. L’utilisation de rôles d’utilisateur dans la base de données permet de gérer ces permissions.
 
@@ -37,6 +43,6 @@ Les privilèges d'accès à la base de données doivent être strictement contr�
 
  [source segmentation :](https://www.cnil.fr/fr/definition/segmentation-des-donnees)
 
-Utilisation de requêtes préparées : Bravo genie
+Utilisation de requêtes préparées : <!--Bravo genie -->
 
 Pour prévenir les attaques par injection SQL, l'utilisation de requêtes préparées est une pratique incontournable. Cela garantit que les données utilisateur sont correctement échappées, évitant ainsi que des entrées malveillantes ne puissent altérer la structure de la requête.

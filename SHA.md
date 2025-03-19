@@ -13,7 +13,7 @@ le plus gros inconvénian d'un cryptage de type SHA c'est que quand tu va Hasher
 ## le salage 
 
 rajouter des élément au mot de passe aléatoire pour permettre un hashage plus sécrutiser
- pour les mot de passe il y a des salage et hashage itératif come ses trois 
+pour les mot de passe il y a des salage et hashage itératif come ses trois 
 ```
 bcrypt
 PBKDF2

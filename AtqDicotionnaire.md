@@ -7,5 +7,4 @@ des phrases de passe les plus utilisés ou bien encore une combinaison (concaté
 mots connus.
 
 
-
 [lien de attaque par dicitonnaire page 10](https://cyber.gouv.fr/sites/default/files/2021/10/anssi-guide-authentification_multifacteur_et_mots_de_passe.pdf)

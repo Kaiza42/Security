@@ -1,6 +1,5 @@
 # Attaque par recherche exhaustive. 
 
-
 Cette attaque consiste à choisir un ensemble de caractères
 et à tester automatiquement toutes les combinaisons possibles de ces caractères. Une variante
 de cette attaque, désignée par l’expression anglaise password spraying, consiste à effectuer des
